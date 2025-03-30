@@ -1,4 +1,4 @@
-# `Gaku` 
+# `Gaku` 👂
 
 Full Stack Web App that ingests any file format and gives it the [r/explainlikeimfive](https://www.reddit.com/r/explainlikeimfive/) treatment.
 
