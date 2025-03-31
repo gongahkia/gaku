@@ -12,7 +12,9 @@ Full Stack Web App that ingests any file format and gives it the [r/explainlikei
 
 ## Stack
 
-...
+* Frontend *(Vue.js, Tailwind CSS, Netlify)*
+* Backend *(JavaScript)*
+* [Gemeni Developer API](https://ai.google.dev/)
 
 ## Architecture
 
