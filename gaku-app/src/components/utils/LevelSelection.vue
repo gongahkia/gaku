@@ -111,6 +111,7 @@ const generateSummary = async () => {
 </script>
 
 <style lang="scss" scoped>
+@use "sass:color";
 .level-selection-container {
   max-width: 800px;
   margin: 0 auto;

@@ -8,7 +8,12 @@ Full Stack Web App that ingests any file format and gives it the [r/explainlikei
 
 ## Usage
 
-...
+```console
+$ git clone https://github.com/gongahkia/gaku
+$ cd gaku/gaku-app
+$ npm install
+$ npm run dev 
+```
 
 ## Screenshots
 

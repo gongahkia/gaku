@@ -11,9 +11,17 @@
 <script setup lang="ts">
 import AppHeader from './components/UI/AppHeader.vue';
 import AppFooter from './components/UI/AppFooter.vue';
+import { onMounted } from 'vue';
+import { useSummaryStore } from './stores/summaryStore';
+
+const summaryStore = useSummaryStore();
+onMounted(() => {
+  summaryStore.loadSavedSummaries();
+});
 </script>
 
 <style lang="scss">
+@use "sass:color";
 :root {
   --primary-color: #4f46e5;
   --secondary-color: #818cf8;

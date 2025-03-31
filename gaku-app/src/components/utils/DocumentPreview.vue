@@ -25,6 +25,7 @@
   </script>
   
   <style lang="scss" scoped>
+  @use "sass:color";
   .document-preview {
     background-color: var(--card-background);
     border-radius: var(--border-radius);
