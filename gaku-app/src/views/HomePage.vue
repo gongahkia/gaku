@@ -1,7 +1,7 @@
 <template>
     <div class="home-page">
       <h1>Welcome to Gaku</h1>
-      <p>Upload your document and have it explained at 5 complexity levels.</p>
+      <p>Upload your document and have it explained in 5 complexity levels and 4 different ways.</p>
       <FileUpload />
     </div>
   </template>

@@ -71,8 +71,11 @@ const levels = [
   { id: 2, name: 'Teen (13-16 years)', emoji: '🧑‍🎓', description: 'More detailed explanations with some technical terms introduced.' },
   { id: 3, name: 'College Student (18-24 years)', emoji: '🎓', description: 'In-depth explanations with field-specific terminology and concepts.' },
   { id: 4, name: 'Graduate Student (25+ years)', emoji: '🔬', description: 'Advanced explanations assuming strong background knowledge.' },
-  { id: 5, name: 'Expert', emoji: '🧠', description: 'Highly technical and detailed explanations for subject matter experts.' },
+  { id: 5, name: 'Expert (30+ years)', emoji: '🧠', description: 'Highly technical and detailed explanations for subject matter experts.' },
   { id:6, name: 'Teacher', emoji: '👨‍🏫', description: 'Detailed explanations for teachers to help students understand complex concepts.' },
+  { id:7, name: 'Flash Cards', emoji: '💡', description: 'Bite-sized summaries optimized for quick review and memorization.' },
+  { id:8, name: 'Knowledge Graph', emoji: '🌐', description: 'Visual representation of key concepts and their relationships.' },
+  { id:9, name: 'Short and Sweet', emoji: '🍬', description: 'One paragraph summaries of core ideas.' },
 ];
 
 const selectLevel = (levelId: number) => {
