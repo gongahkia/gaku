@@ -8,6 +8,16 @@ Full Stack Web App that ingests any file format and gives it the [r/explainlikei
 
 ## Usage
 
+For local debugging.
+
+1. Create a `.env` file of the following configuration.
+
+```env
+VITE_GEMINI_API_KEY=XXX
+```
+
+2. Run the below.
+
 ```console
 $ git clone https://github.com/gongahkia/gaku
 $ cd gaku/gaku-app

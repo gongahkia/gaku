@@ -107,19 +107,18 @@
     isProcessing.value = true;
     
     try {
+
       // In a real application, this would call your OCR service
       // For this example, we'll simulate processing with a timeout
       await new Promise(resolve => setTimeout(resolve, 2000));
       
+      // FUA to implement the actual OCR here
       // Simulate extracted text (in a real app, this would come from your OCR service)
       const extractedText = `This is simulated extracted text from the document ${selectedFile.value.name}. 
       In a real application, this would be the actual text content extracted from your PDF or image using OCR technology.`;
       
-      // Store the extracted text
       documentStore.setDocumentText(extractedText);
       documentStore.setFileName(selectedFile.value.name);
-      
-      // Navigate to the summary level selection page
       router.push('/select-level');
     } catch (error) {
       console.error('Error processing file:', error);
