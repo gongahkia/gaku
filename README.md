@@ -10,6 +10,10 @@ Full Stack Web App that ingests any file format and gives it the [r/explainlikei
 
 ...
 
+## Screenshots
+
+...
+
 ## Stack
 
 * Frontend *(Vue.js, Tailwind CSS, Netlify)*
