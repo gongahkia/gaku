@@ -39,7 +39,6 @@
   </script>
   
   <style lang="scss" scoped>
-  @use "sass:color";
   .file-info {
     display: flex;
     justify-content: space-between;

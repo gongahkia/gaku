@@ -131,7 +131,6 @@
   </script>
   
   <style lang="scss" scoped>
-  @use "sass:color";
   .upload-container {
     display: flex;
     flex-direction: column;

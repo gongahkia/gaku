@@ -27,7 +27,6 @@
   </script>
   
   <style lang="scss" scoped>
-  @use "sass:color";
   .level-card {
     background-color: var(--card-background);
     border-radius: var(--border-radius);
