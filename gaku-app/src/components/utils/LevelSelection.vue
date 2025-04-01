@@ -197,12 +197,11 @@ const getLevelSpecificPrompt = (levelId: number, documentText: string): string =
        Ensure the summary could be understood by a general audience.
        Here's the text to summarize: ${documentText}`,
 
-    10: `Create a summary of one peripheral idea that is not the core idea of the text.
-      Ensure the response is at least SIX paragraphs (6-10 sentences minimum).
-      Use convaluted, wordy and confusing language and sentence structure.
-      Ensure the summary is not easily understood by a general audience.
-      Have a condescending tone.
-      Include one or more awkwardly phrased metaphors in the summary.
+    10: `Create a summary that jumps between peripheral ideas that are not the main point of the text.
+      Ensure the response is at least THREE paragraphs (6-10 sentences minimum).
+      Use convaluted, wordy language and sentence structure.
+      The summary must not be easily understood by a general audience.
+      Include three or more awkwardly phrased metaphors in the summary.
       Here's the text to summarize: ${documentText}`,
   };
   
