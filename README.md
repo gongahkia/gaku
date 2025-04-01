@@ -4,7 +4,7 @@
 
 Full Stack Web App that reads a file and gives it the [r/explainlikeimfive](https://www.reddit.com/r/explainlikeimfive/) treatment.
 
-`Gaku` ingests a [PDF/JPG/PNG](#screenshots) and breaks it down [10 different ways](#child).
+`Gaku` ingests a [PDF, JPG or PNG](#screenshots) and breaks it down [10 different ways](#child).
 
 <div align="center">
     <img src="./asset/reference/1.png" width="75%">
