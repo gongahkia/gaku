@@ -52,11 +52,13 @@
   </template>
   
   <script setup lang="ts">
-  import { ref } from 'vue';
+  import { ref, onMounted } from 'vue';
   import { useRouter } from 'vue-router';
   import { useDocumentStore } from '../../stores/documentStore';
   import LoadingSpinner from '../UI/LoadingSpinner.vue';
   import FileInfo from './FileInfo.vue';
+  import * as pdfjsLib from 'pdfjs-dist';
+  import Tesseract from 'tesseract.js';
   
   const router = useRouter();
   const documentStore = useDocumentStore();
@@ -66,6 +68,15 @@
   const isDragging = ref(false);
   const isProcessing = ref(false);
   
+  onMounted(() => {
+    import('pdfjs-dist/build/pdf.worker.mjs').then(worker => {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
+        'pdfjs-dist/build/pdf.worker.mjs',
+        import.meta.url
+      ).toString();
+    });
+  });
+
   const triggerFileInput = () => {
     fileInput.value?.click();
   };
@@ -103,20 +114,16 @@
   
   const processFile = async () => {
     if (!selectedFile.value) return;
-    
     isProcessing.value = true;
-    
     try {
-
-      // In a real application, this would call your OCR service
-      // For this example, we'll simulate processing with a timeout
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // FUA to implement the actual OCR here
-      // Simulate extracted text (in a real app, this would come from your OCR service)
-      const extractedText = `This is simulated extracted text from the document ${selectedFile.value.name}. 
-      In a real application, this would be the actual text content extracted from your PDF or image using OCR technology.`;
-      
+      let extractedText = '';
+      if (selectedFile.value.type === 'application/pdf') {
+        console.log("PDF");
+        extractedText = await extractTextFromPdf(selectedFile.value);
+      } else if (selectedFile.value.type.startsWith('image/')) {
+        console.log("Image");
+        extractedText = await extractTextFromImage(selectedFile.value);
+      }
       documentStore.setDocumentText(extractedText);
       documentStore.setFileName(selectedFile.value.name);
       router.push('/select-level');
@@ -127,6 +134,70 @@
       isProcessing.value = false;
     }
   };
+
+  // Add these helper functions for text extraction
+  const extractTextFromPdf = async (file: File): Promise<string> => {
+    // Read the file as ArrayBuffer
+    const arrayBuffer = await file.arrayBuffer();
+    
+    // Load the PDF document
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    const totalPages = pdf.numPages;
+    
+    // Extract text from each page
+    const textPromises = [];
+    for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
+      const page = await pdf.getPage(pageNum);
+      const textContent = await page.getTextContent();
+      const pageText = textContent.items
+        .map(item => 'str' in item ? item.str : '')
+        .join(' ');
+      textPromises.push(pageText);
+    }
+    
+    // Combine text from all pages
+    return textPromises.join('\n\n');
+  };
+
+  const extractTextFromImage = async (file: File): Promise<string> => {
+    const imageUrl = URL.createObjectURL(file);
+    const result = await Tesseract.recognize(
+      imageUrl,
+      'eng', // language - English
+      {
+        logger: m => {
+          console.log(m);
+        }
+      }
+    );
+    
+    // Clean up the URL object
+    URL.revokeObjectURL(imageUrl);
+    
+    return result.data.text;
+  };
+
+  async function performOCR(imagePath) {
+    try {
+      console.log("Starting OCR process");
+      const worker = await Tesseract.createWorker({
+        logger: m => console.log(m)
+      });
+      await worker.loadLanguage('eng');
+      await worker.initialize('eng');
+      console.log("Worker initialized");
+      
+      const { data: { text } } = await worker.recognize(imagePath);
+      console.log("OCR completed. Extracted text length:", text.length);
+      
+      await worker.terminate();
+      return text;
+    } catch (error) {
+      console.error('Error in OCR process:', error);
+      throw error;
+    }
+  }
+
   </script>
   
   <style lang="scss" scoped>
