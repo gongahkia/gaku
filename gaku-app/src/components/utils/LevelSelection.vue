@@ -183,6 +183,7 @@ const getLevelSpecificPrompt = (levelId: number, documentText: string): string =
     
     8: `Create a knowledge graph representation of the key concepts in this text.
        Format your response as a single mermaid diagram returned within a code block.
+       Ensure the diagram follows a valid mermaid syntax that can be rendered.
        The mermaid diagram should depict the following if applicable.
        1. Core concepts within the text
        2. Relationships between concepts (how they connect)
