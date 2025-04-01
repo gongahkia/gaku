@@ -149,7 +149,7 @@ The name `Gaku` is in reference to [Gaku](https://sakamoto-days.fandom.com/wiki/
     <img src="./asset/logo/gaku.jpg" width="35%">
 </div>
 
-## Legal Disclaimer
+## Legal disclaimer
 
 The Gaku application ("Gaku") is provided "AS IS" and "AS AVAILABLE," without warranty of any kind, express or implied. By using Gaku, you acknowledge that you have read, understood, and agree to be bound by this disclaimer's below terms and limitations.
 
