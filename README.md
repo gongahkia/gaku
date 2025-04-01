@@ -6,6 +6,11 @@ Full Stack Web App that ingests any file format and gives it the [r/explainlikei
 
 ...
 
+## Architecture
+
+```mermaid
+```
+
 ## Usage
 
 For local usage and debugging.
@@ -32,41 +37,62 @@ $ npm run dev
 
 ## Screenshots
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="./asset/reference/" width="48%">
-  <img src="./asset/reference/" width="48%">
-</div>
+> [!NOTE]  
+> For context, the below screenshots show `Gaku` summarizing an input document on character merchandising under IP Law in different jurisdictions.
+
+![](./asset/reference/1.png)
+![](./asset/reference/2.png)
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="./asset/reference/" width="48%">
-  <img src="./asset/reference/" width="48%">
+  <img src="./asset/reference/pdf.png" width="48%">
+  <img src="./asset/reference/image.png" width="48%">
 </div>
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="./asset/reference/" width="48%">
-  <img src="./asset/reference/" width="48%">
-</div>
+### Child
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="./asset/reference/" width="48%">
-  <img src="./asset/reference/" width="48%">
-</div>
+![](./asset/reference/3.png)
 
-<div style="display: flex; justify-content: space-between;">
-  <img src="./asset/reference/" width="48%">
-  <img src="./asset/reference/" width="48%">
-</div>
+### Teen
+
+![](./asset/reference/4.png)
+
+### College Student 
+
+![](./asset/reference/5.png)
+
+### Graduate Student 
+
+![](./asset/reference/6.png)
+
+### Expert
+
+![](./asset/reference/7.png)
+
+### Teacher
+
+![](./asset/reference/8.png)
+
+### Flash Cards
+
+![](./asset/reference/9.png)
+
+### Knowledege Graph
+
+![](./asset/reference/10.png)
+
+### Fries in the Bag
+
+![](./asset/reference/11.png)
+
+### r/PoorlyExplained
+
+![](./asset/reference/12.png)
 
 ## Stack
 
 * Frontend *(Vue.js, Tailwind CSS, Netlify)*
 * Backend *(JavaScript)*
 * [Gemeni Developer API](https://ai.google.dev/)
-
-## Architecture
-
-```mermaid
-```
 
 ## Disclaimer
 
