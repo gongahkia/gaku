@@ -1,6 +1,6 @@
 <template>
     <header>
-      <h1>Gaku</h1>
+      <h1>Gaku 👂</h1>
       <p>Learning is a universal language</p>
     </header>
   </template>

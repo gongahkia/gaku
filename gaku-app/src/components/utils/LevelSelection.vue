@@ -113,15 +113,21 @@ const generateSummary = async () => {
 };
 
 const getLevelSpecificPrompt = (levelId: number, documentText: string): string => {
-  // FUA to remove this below predefined document text once the OCR is properly working and documentext is fed properly
   documentText = `
-  Singapore Copyright Law
-  Copyright in Singapore is governed by the Copyright Act (Cap 63, 2006 Rev Ed), supplemented by various subsidiary legislation including:
-    Copyright (International Organisations) Regulations
-    Copyright (International Protection) Regulations
-    Copyright (Records Royalty System) Regulations
-    Copyright (Border Enforcement Measures) Regulations
-    Copyright (Network Service Provider) Regulations
+In the EU, there is no specific IP right available for fictional characters; instead, protection relies on a combination of copyright, trademark, and design laws.
+The EU's trademark reform package has loosened rules for 'graphical representation,' allowing organizations to use non-traditional trademarks (such as 3D or motion marks) to protect characters.
+Copyright protection in the EU extends to fictional characters when they constitute the "author's own intellectual creation".
+Recent case law has clarified that the physical appearance of a fictional character is copyrightable when the combination of all physical characteristics produces a distinctive overall impression.
+For parody and pastiche uses, the EU's Copyright Directive (2001/29/EC) provides an optional exception to copyright infringement, which member states may implement in their national laws.
+Australia has no specific right that protects the use of a person's name, photograph, or likeness
+Character merchandising in Australia relies primarily on intellectual property regimes including copyright, registered designs, and trademarks.
+For unauthorized uses of character images, Australian law offers potential remedies through:
+Defamation law
+The Australian Consumer Law (prohibiting misleading or deceptive conduct)
+Unlike the United States, which recognizes a "right of publicity," Australia has no specific law aimed at preventing unauthorized use of a person's image.
+Singapore provides robust protection for intellectual property, ranking second globally for IP protection according to the World Economic Forum's Global Competitiveness Index.
+Under Singapore's copyright law, which was updated in 2021, content creators are now the default copyright owners of all types of commissioned content, including characters. The new Copyright Act also prohibits selling products and services that provide access to copyright-infringing content.
+Singapore, like Australia, does not recognize a specific right of publicity or personality right. Protection for character merchandising relies on copyright, trademark, and design laws, with copyright beginning automatically when a work is created
   `
   const prompts = {
     1: `You are explaining to a young child (5-8 years old). 
