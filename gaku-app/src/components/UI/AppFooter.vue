@@ -1,6 +1,7 @@
 <template>
     <footer>
       <p>© 2025 Gaku. Made with ❤️ by <a href="https://github.com/gongahkia">Gabriel Ong</a>.</p>
+      <p>Source code <a href="https://github.com/gongahkia/gaku">here</a>.</p>
     </footer>
   </template>
   

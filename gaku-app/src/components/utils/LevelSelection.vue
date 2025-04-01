@@ -74,9 +74,10 @@ const levels = [
   { id: 4, name: 'Graduate Student (25+ years)', emoji: '🔬', description: 'Advanced explanations assuming strong background knowledge.' },
   { id: 5, name: 'Expert (30+ years)', emoji: '🧠', description: 'Highly technical and detailed explanations for subject matter experts.' },
   { id:6, name: 'Teacher', emoji: '👨‍🏫', description: 'Detailed explanations for teachers to help students understand complex concepts.' },
-  { id:7, name: 'Flash Cards', emoji: '💡', description: 'Bite-sized summaries optimized for quick review and memorization.' },
+  { id:7, name: 'Flash Cards', emoji: '💡', description: 'Optimized for quick review, spaced repetition and memorization.' },
   { id:8, name: 'Knowledge Graph', emoji: '🌐', description: 'Visual representation of key concepts and their relationships.' },
-  { id:9, name: 'Short and Sweet', emoji: '🍬', description: 'One paragraph summaries of core ideas.' },
+  { id:9, name: 'Fries in the Bag', emoji: '🍟', description: 'One paragraph summaries of core ideas.' },
+  { id:10, name: 'r/PoorlyExplained', emoji: '📱', description: 'How not to explain something.' },
 ];
 
 const selectLevel = (levelId: number) => {
@@ -189,12 +190,20 @@ const getLevelSpecificPrompt = (levelId: number, documentText: string): string =
        5. A text description of how to visualize this as a network diagram
        Here's the text to analyze: ${documentText}`,
     
-    9: `Create an extremely concise "Short and Sweet" summary.
-       Limit your response to ONE paragraph (5-7 sentences maximum).
+    9: `Create an extremely concise providing an overview appropriate for laymen.
+       Limit your response to ONE paragraph (3-5 sentences maximum).
        Focus only on the most essential core ideas.
        Use clear, direct language with no unnecessary words.
        Ensure the summary could be understood by a general audience.
-       Here's the text to summarize: ${documentText}`
+       Here's the text to summarize: ${documentText}`,
+
+    10: `Create a summary of one peripheral idea that is not the core idea of the text.
+      Ensure the response is at least SIX paragraphs (6-10 sentences minimum).
+      Use convaluted, wordy and confusing language and sentence structure.
+      Ensure the summary is not easily understood by a general audience.
+      Have a condescending tone.
+      Include one or more awkwardly phrased metaphors in the summary.
+      Here's the text to summarize: ${documentText}`,
   };
   
   return prompts[levelId as keyof typeof prompts] || 
