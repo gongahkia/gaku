@@ -125,7 +125,7 @@ sequenceDiagram
 
 ![](./asset/reference/9.png)
 
-### Knowledege Graph
+### Knowledge Graph
 
 ![](./asset/reference/10.png)
 
