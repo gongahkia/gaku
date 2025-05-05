@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/gaku_1.0.0-build-passing)](https://github.com/gongahkia/gaku/releases/tag/1.0.0)
+[![](https://img.shields.io/badge/gaku_1.0.0-passing-green)](https://github.com/gongahkia/gaku/releases/tag/1.0.0)
 
 # `Gaku` 👂
 
